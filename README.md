@@ -1,24 +1,8 @@
 # README
+Steps to run the system locally
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1) clone the repo
+2) go inside the clone repo and run the command bundle install
+3) The .env file is also in the repo(technically should not be there but since this is a test app and I have used RDS so attached it which I will close in a day or two)
+4) run command rails s to run the application
+5) open postman and test the APIs
