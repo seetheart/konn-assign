@@ -1,4 +1,5 @@
 class BaseService
+  include ActiveModel::Validations
   attr_reader :result
   def error_status
     @error_status ||= 400

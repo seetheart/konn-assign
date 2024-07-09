@@ -2,7 +2,6 @@ class CreateUserService < BaseService
   def initialize(params)
     @params = params
     _publish(params)
-    debugger
   end
 
   def perform
@@ -11,13 +10,15 @@ class CreateUserService < BaseService
   end
 
   def create
-    if @user = User.create(name: @name, email: @email, campaigns_list: @campaigns_list)
+    @user = User.create(name: @name, email: @email, campaigns_list: @campaigns_list)
+
+    if @user.save
+      return true
     else
       @error_status = '500'
+      errors.add(:base, @user.errors.objects.first.full_message)
       return false
     end
-
-    true
   end
 
   def set_result
